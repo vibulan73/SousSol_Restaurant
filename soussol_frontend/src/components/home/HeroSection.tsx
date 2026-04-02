@@ -34,17 +34,13 @@ export default function HeroSection() {
   return (
     <section className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden">
       {/* Background image from API, or gradient fallback */}
-      {img?.imageUrl ? (
-        <Image
-          src={`${API_URL}${img.imageUrl}`}
-          alt="Sous Sol atmosphere"
-          fill
-          className="object-cover"
-          priority
-        />
-      ) : (
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0c0b09] via-[#1c1408] to-[#0c0b09]" />
-      )}
+      <Image
+        src={img?.imageUrl ? `${API_URL}${img.imageUrl}` : "/hero.jpeg"}
+        alt="Sous Sol atmosphere"
+        fill
+        className="object-cover"
+        priority
+      />
 
       {/* Multi-layer overlay for depth */}
       <div className="absolute inset-0 bg-gradient-to-b from-ss-black/70 via-ss-black/30 to-ss-black/85" />

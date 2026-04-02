@@ -5,11 +5,13 @@ import Link from "next/link";
 import { menuApi } from "@/lib/api";
 import type { MenuItem } from "@/types";
 import Reveal from "@/components/ui/Reveal";
+import { MOCK_ENABLED, getMockPopularItems } from "@/lib/mockData";
 
 export default function FeaturedSection() {
   const [items, setItems] = useState<MenuItem[]>([]);
 
   useEffect(() => {
+    if (MOCK_ENABLED) { setItems(getMockPopularItems()); return; }
     menuApi.getPopularItems().then(setItems).catch(() => {});
   }, []);
 

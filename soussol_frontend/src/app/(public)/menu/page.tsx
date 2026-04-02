@@ -4,6 +4,12 @@ import { useEffect, useState, useCallback, useRef, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { menuApi } from "@/lib/api";
 import type { MenuCategory, MenuItem, MenuSubcategory } from "@/types";
+import {
+  MOCK_ENABLED,
+  mockCategories,
+  getMockItemsByCategoryId,
+  getMockSubcategoriesByCategoryId,
+} from "@/lib/mockData";
 
 // ── Tab definition ────────────────────────────────────────────────────────────
 
@@ -121,6 +127,11 @@ function MenuContent() {
 
   // Load categories once
   useEffect(() => {
+    if (MOCK_ENABLED) {
+      setCategories(mockCategories);
+      setCatResolved(true);
+      return;
+    }
     menuApi.getCategories().then((cats) => {
       setCategories(cats);
       setCatResolved(true);
@@ -140,11 +151,17 @@ function MenuContent() {
   useEffect(() => {
     if (!catResolved) return;
     const cat = matchedCategory();
-    if (!cat) {
-      setItems([]);
-      setSubcategories([]);
+    if (!cat) { setItems([]); setSubcategories([]); return; }
+
+    if (MOCK_ENABLED) {
+      const fetchedItems = getMockItemsByCategoryId(cat.id);
+      const fetchedSubs  = getMockSubcategoriesByCategoryId(cat.id);
+      setItems(fetchedItems);
+      setSubcategories(fetchedSubs);
+      setActiveSub(fetchedSubs.length > 0 ? fetchedSubs[0].id : "none");
       return;
     }
+
     setLoading(true);
     Promise.all([
       menuApi.getItemsByCategory(cat.id),

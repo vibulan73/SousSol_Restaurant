@@ -175,9 +175,10 @@ export default function Footer() {
           <p className="text-ss-muted text-xs tracking-wider">
             © {new Date().getFullYear()} Sous Sol. All rights reserved.
           </p>
-          <p className="text-ss-muted text-xs tracking-wider italic">
+          <a href="https://www.codeglofix.com" target="_blank" rel="noopener noreferrer"
+            className="text-ss-muted text-xs tracking-wider italic hover:text-ss-gold transition-colors">
             Developed by CodeGloFix Pvt Ltd
-          </p>
+          </a>
         </div>
 
       </div>
