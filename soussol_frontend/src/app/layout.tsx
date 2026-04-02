@@ -29,6 +29,10 @@ export const metadata: Metadata = {
     "A clandestine dining experience beneath the streets of Norwood. Seasonal cuisine, handcrafted cocktails, and curated wines in an intimate underground setting.",
   keywords:
     "Sous Sol, restaurant, Norwood, Adelaide, fine dining, speakeasy, underground bar, cocktails, wine",
+  icons: {
+    icon: "/logo.jpg",
+    apple: "/logo.jpg",
+  },
   openGraph: {
     title: "Sous Sol",
     description: "Hidden Below. Found By Few.",

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { newsletterApi } from "@/lib/api";
 import Reveal from "@/components/ui/Reveal";
 
@@ -61,6 +62,7 @@ export default function Footer() {
           {/* Brand */}
           <Reveal delay={0}><div>
               <div className="mb-5">
+              <Image src="/logo.jpg" alt="Sous Sol" width={56} height={56} className="h-12 w-auto object-contain mb-3" />
               <p className="text-ss-muted text-[9px] tracking-[0.5em] uppercase mb-1">Est. Norwood</p>
               <h3 className="font-display text-2xl tracking-[0.25em] uppercase text-ss-gold">Sous Sol</h3>
             </div>

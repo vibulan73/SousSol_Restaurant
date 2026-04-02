@@ -246,13 +246,13 @@ function MenuContent() {
 
       {/* Tab bar */}
       <div className="sticky top-16 md:top-20 z-40 bg-ss-black/96 backdrop-blur-md border-b border-ss-border">
-        <div className="max-w-6xl mx-auto px-6 lg:px-10">
-          <div className="flex">
+        <div className="scroll-x scrollbar-hide">
+          <div className="flex min-w-max px-4 lg:px-10">
             {TAB_SLUGS.map((slug) => (
               <button
                 key={slug}
                 onClick={() => setTab(slug)}
-                className={`px-6 sm:px-10 py-5 text-xs tracking-[0.35em] uppercase transition-all duration-300 border-b-2 ${
+                className={`px-6 sm:px-8 py-5 text-xs tracking-[0.35em] uppercase whitespace-nowrap transition-all duration-300 border-b-2 shrink-0 ${
                   activeTab === slug
                     ? "text-ss-gold border-ss-gold"
                     : "text-ss-muted border-transparent hover:text-ss-cream hover:border-ss-border"
