@@ -25,7 +25,7 @@ type FormStatus = "idle" | "loading" | "success" | "error";
 // ── Input component ───────────────────────────────────────────────────────────
 
 const inputClass =
-  "w-full bg-ss-surface border border-ss-border text-ss-cream placeholder-ss-muted/60 px-4 py-3.5 text-sm focus:border-ss-gold/50 transition-colors";
+  "w-full min-w-0 bg-ss-surface border border-ss-border text-ss-cream placeholder-ss-muted/60 px-4 py-3.5 text-base sm:text-sm focus:border-ss-gold/50 transition-colors";
 
 // ── Page ──────────────────────────────────────────────────────────────────────
 
@@ -175,7 +175,7 @@ export default function ReservationsPage() {
 
                 {/* Date + Time + Guests */}
                 <div className="grid sm:grid-cols-3 gap-4">
-                  <div>
+                  <div className="min-w-0">
                     <label className="block text-ss-muted text-[10px] tracking-[0.35em] uppercase mb-2">
                       Date <span className="text-ss-gold">*</span>
                     </label>
@@ -189,7 +189,7 @@ export default function ReservationsPage() {
                       className={inputClass}
                     />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <label className="block text-ss-muted text-[10px] tracking-[0.35em] uppercase mb-2">
                       Time <span className="text-ss-gold">*</span>
                     </label>
@@ -208,7 +208,7 @@ export default function ReservationsPage() {
                       ))}
                     </select>
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <label className="block text-ss-muted text-[10px] tracking-[0.35em] uppercase mb-2">
                       Guests <span className="text-ss-gold">*</span>
                     </label>

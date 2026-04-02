@@ -37,16 +37,28 @@
 /* ── Base ─────────────────────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
   background-color: rgb(var(--ss-black));
   color: rgb(var(--ss-cream));
   transition: background-color 0.3s ease, color 0.3s ease;
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
 }
+
+/* ── Horizontal scroll containers (mobile subcategory strip etc.) ────────── */
+.scroll-x {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar { display: none; }
 
 /* ── Custom scrollbar ────────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 5px; }

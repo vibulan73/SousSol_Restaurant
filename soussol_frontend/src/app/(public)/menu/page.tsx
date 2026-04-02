@@ -266,7 +266,7 @@ function MenuContent() {
 
         {/* Mobile subcategory strip */}
         {sidebarEntries.length > 1 && (
-          <div className="lg:hidden border-t border-ss-border overflow-x-auto scrollbar-hide">
+          <div className="lg:hidden border-t border-ss-border scroll-x scrollbar-hide">
             <div className="flex gap-1 px-4 py-2 min-w-max">
               {sidebarEntries.map((entry) => (
                 <button
