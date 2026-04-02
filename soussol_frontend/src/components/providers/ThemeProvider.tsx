@@ -21,12 +21,12 @@ const ThemeContext = createContext<ThemeContextValue>({
 });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<Theme>("light");
 
   // On mount: read stored preference and apply it
   useEffect(() => {
     const stored = localStorage.getItem("ss-theme") as Theme | null;
-    const initial: Theme = stored === "light" ? "light" : "dark";
+    const initial: Theme = stored === "dark" ? "dark" : "light";
     setTheme(initial);
     document.documentElement.setAttribute("data-theme", initial);
   }, []);
