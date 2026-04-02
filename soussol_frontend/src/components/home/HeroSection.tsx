@@ -35,7 +35,7 @@ export default function HeroSection() {
     <section className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden">
       {/* Background image from API, or gradient fallback */}
       <Image
-        src={img?.imageUrl ? `${API_URL}${img.imageUrl}` : "/hero.jpeg"}
+        src={img?.imageUrl ? `${API_URL}${img.imageUrl}` : "/hero.png"}
         alt="Sous Sol atmosphere"
         fill
         className="object-cover"

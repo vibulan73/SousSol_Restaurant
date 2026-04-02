@@ -37,12 +37,15 @@
 /* ── Base ─────────────────────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   background-color: rgb(var(--ss-black));
   color: rgb(var(--ss-cream));
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* ── Custom scrollbar ────────────────────────────────────────────────────── */
